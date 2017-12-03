@@ -1,0 +1,12 @@
+1.  Stdint.h is a header file in the C standard library introduced in the C99 standard library section to allow write more portable code by providing a set of typedefs that specify exact-width integer types.
+2.  You must use well-defined types which makes the code far easier and safer to port. What you type is what you get when you use them.
+3.  A BYTE, a DWORD, a LONG, and a WORD has 1, 4, 4 and 2 bytes respectively.
+4.  The first two bytes of any BMP file must be "BM" in ASCII, 66 and 77 in decimal, or 0x42 0x4D  in hexadecimal.
+5.  bfSize - the size of the BMP file in bytes. biSize - the size of file header (structure).
+6.  If the biHeight value is negative - bitmaps stores from the top to bottom and its origin is the upper left corner.
+7.  The biBitCount determines the BMP’s color depth.
+8.  fopen will return NULL if it cannot find/open/read input file or create the output file to write in it.
+9.  The third argument "fread" - count - specifies how many elements you want to read. We're always reading a struct so we only need 1 struct.
+10. The padding would be 3.
+11. "fseek" moves a file pointer to specified location. In copy.c it skips over the padding int and looks for next RGBTRIPLE to read.
+12. SEEK_CUR - is a onstant that specifies the current position of the file pointer.

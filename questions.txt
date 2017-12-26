@@ -1,0 +1,15 @@
+0.  Pneumonoultramicroscopicsilicovolcanoconiosis is the longest word in a dictionary.
+1.  getrusage is the function that returns time of implementations of check, load, size, and unload.
+2.  There are 16 members in a variable of type struct rusage.
+3.  We pass before and after by reference (instead of by value) to the function "calculate" because passing large structs by value is slow and takes up a lot of memory.
+4.  The key aspect of the for loop is the c = fgetc(fp) function call. fgetc gets the next character (an unsigned char) from fp and advances the
+    position indicator in fp until the end of the file (EOF) is reached. As each character is received, it is put through an if(if)-elseif-elseif
+    logical sequence. Summarizing the sequence: 1) If the character is an alphabetical character or an apostrophe that is not at index 0 of the
+    word, the character is appended to the word array. 2) Else if the character is numerical, the word is ignored and we skip ahead to the
+    next word (which is found after a space). 3) Else if we hit a space or punctuation, we must have found a whole word so we terminate the word by
+    adding \0 to the word array.
+5.  fscanf with a format string like "%s" will read subsequent characters until a whitespace is found (whitespace characters are considered to be
+    blank, newline and tab). Because words within the txt files sometimes end with punctuation, fscanf will view them as being part of the word,
+    which complicates the reading procedure.
+6.  The parameters for check (const char* word) and load (const char* dictionary) are declared as const pointers because we want
+    to prevent changes to a read word and the dictionary we are using

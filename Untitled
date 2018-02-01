@@ -1,0 +1,40 @@
+import collections
+
+def lines(a, b):
+    """Return lines in both a and b"""
+
+    a = a.splitlines()
+    b = b.splitlines()
+    ab = []
+    ab.extend(a)
+    ab.extend(b)
+    dubl = [x for x, y in collections.Counter(ab).items() if y > 1]
+    return dubl
+
+def lines(a, b):
+    a = a.splitlines()
+    b = b.splitlines()
+    ab = []
+    ab.extend(a)
+    ab.extend(b)
+    ab = list([x for x in ab if ab.count(x) > 1])
+    ab = set(a)
+
+
+def lines(a, b):
+    """Return lines in both a and b"""
+
+    a = a.splitlines()
+    b = b.splitlines()
+    ab = []
+    ab.extend(a)
+    ab.extend(b)
+    dubl = set()
+    dubl_2 = set()
+    for X in ab:
+        if X in dubl_2:
+            dubl.add(X)
+        else:
+            dubl_2.add(X)
+    return dubl
+
